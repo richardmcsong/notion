@@ -35,6 +35,7 @@ jobs:
         name: Set up pack CLI
       - run: pack build gcr.io/rmcs-notion/notion --builder gcr.io/buildpacks/builder:v1
         name: pack build
-
       - run: docker push gcr.io/rmcs-notion/notion
         name: Push to GCR
+      - run: gcloud run jobs replace cloudrun.yml
+        name: Deploy to Cloud Run

@@ -1,0 +1,19 @@
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  name: notion-integration
+spec:
+  template:
+    spec:
+      template:
+        spec:
+          containers:
+          - image: gcr.io/rmcs-notion/notion-integration
+            env:
+            - name: NOTION_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: notion-api-key
+                  key: latest
+            - name: DEFERRED_TASKS_DASHBOARD_ID
+              value: 05aafb48-7c2f-48ee-9983-16a7698919cd
