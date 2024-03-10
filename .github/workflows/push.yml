@@ -37,5 +37,5 @@ jobs:
         name: pack build
       - run: docker push gcr.io/rmcs-notion/notion
         name: Push to GCR
-      - run: gcloud run jobs replace cloudrun.yml
+      - run: gcloud run jobs replace cloudrun.yml --region us-west1
         name: Deploy to Cloud Run
