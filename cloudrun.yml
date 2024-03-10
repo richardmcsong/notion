@@ -8,7 +8,7 @@ spec:
       template:
         spec:
           containers:
-          - image: gcr.io/rmcs-notion/notion-integration
+          - image: gcr.io/rmcs-notion/notion
             env:
             - name: NOTION_TOKEN
               valueFrom:
