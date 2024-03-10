@@ -13,7 +13,7 @@ spec:
             - name: NOTION_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: notion-api-key
+                  name: notion_api_key
                   key: latest
             - name: DEFERRED_TASKS_DASHBOARD_ID
               value: 05aafb48-7c2f-48ee-9983-16a7698919cd
