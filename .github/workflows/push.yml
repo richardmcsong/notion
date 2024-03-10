@@ -22,6 +22,7 @@ jobs:
           project_id: "rmcs-notion"
           workload_identity_provider: "projects/831819310693/locations/global/workloadIdentityPools/notion/providers/github-actions"
           token_format: "access_token"
+          service_account: "github-actions@rmcs-notion.iam.gserviceaccount.com"
 
       - name: Login to GCR
         uses: docker/login-action@v3
