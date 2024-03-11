@@ -56,10 +56,8 @@ resource "google_cloud_scheduler_job" "notion" {
   http_target {
     http_method = "POST"
     uri         = "https://${google_cloud_run_v2_job.notion.location}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/${data.google_project.notion.number}/jobs/${google_cloud_run_v2_job.notion.name}:run"
-
     oauth_token {
       service_account_email = "${data.google_project.notion.number}-compute@developer.gserviceaccount.com"
     }
   }
-
 }
