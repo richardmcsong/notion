@@ -1,0 +1,22 @@
+name: Terraform Apply
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "cloud/**"
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: 1.6.0
+        name: Setup OpenTofu
+      - run: tofu apply -auto-approve
+        name: Tofu Apply
