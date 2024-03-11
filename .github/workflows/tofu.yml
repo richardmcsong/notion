@@ -18,5 +18,8 @@ jobs:
         with:
           tofu_version: 1.6.0
         name: Setup OpenTofu
-      - run: cd cloud && tofu apply -auto-approve
+      - run: |
+          cd cloud
+          terraform init
+          tofu apply -auto-approve
         name: Tofu Apply
