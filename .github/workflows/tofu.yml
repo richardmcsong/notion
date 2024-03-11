@@ -14,6 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Checkout code
+      - uses: google-github-actions/auth@v2
+        name: Authenticate with Google Cloud
+        id: auth
+        with:
+          project_id: "rmcs-notion"
+          workload_identity_provider: "projects/831819310693/locations/global/workloadIdentityPools/notion/providers/github-actions"
+          service_account: "github-actions@rmcs-notion.iam.gserviceaccount.com"
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: 1.6.0
