@@ -30,6 +30,6 @@ jobs:
         name: Setup OpenTofu
       - run: |
           cd cloud
-          terraform init
+          tofu init
           tofu apply -auto-approve
         name: Tofu Apply

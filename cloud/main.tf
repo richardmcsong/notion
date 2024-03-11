@@ -60,4 +60,5 @@ resource "google_cloud_scheduler_job" "notion" {
       service_account_email = "${data.google_project.notion.number}-compute@developer.gserviceaccount.com"
     }
   }
+
 }
